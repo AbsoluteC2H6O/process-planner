@@ -1,12 +1,13 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import { Container } from '@material-ui/core';
-// import { CssBaseline } from '@material-ui/core';
-// import { DataGrid } from '@material-ui/data-grid';
-import AppBar2 from "./AppBar2";
+import React,{useEffect} from "react";
+
 import AppBar3 from "./AppBar3";
+import {useDispatch} from "react-redux";
 export default function Board() {
+ // const dataselected = useSelector(state => state.dataselected);
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch({type:"dataselected",payload:[]});
+  }, []);
   return (
     <>
     {/* <AppBar2/> */}

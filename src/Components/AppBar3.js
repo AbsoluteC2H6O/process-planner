@@ -16,7 +16,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import CodeIcon from "@material-ui/icons/Code";
 import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
 import Home from "./Home";
@@ -24,10 +23,10 @@ import Fcfs from "./Fcfs";
 import Sjf from "./Sjf";
 import Rr from "./Rr";
 import Data from "./Data";
-
+import DataAleatoria from "./DataAleatoria";
 const drawerWidth = 240;
 const algorithm = ["Inicio", "Algoritmo FCFS", "Algoritmo SJF", "Algoritmo RR"];
-const data = ["Data FCFS", "Data SJF", "Data RR"];
+//const data = ["Data FCFS", "Data SJF", "Data RR"];
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -101,9 +100,15 @@ export default function PersistentDrawerLeft() {
     if (index === 4) {
       setSelectedIndex("Data");
     } else {
-      setSelectedIndex(algorithm[index]);
-      //console.log("lista", selectedIndex, index);
+      if(index ===5){
+        setSelectedIndex("Data Aleatoria");
+      }else{
+        setSelectedIndex(algorithm[index]);
+        //console.log("lista", selectedIndex, index);
+      }
     }
+    
+    
   };
   return (
     <div className={classes.root}>
@@ -167,7 +172,7 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          <ListItem
+          {/* <ListItem
             button
             key={"Data"}
             selected={selectedIndex === "Data"}
@@ -175,6 +180,15 @@ export default function PersistentDrawerLeft() {
           >
             <ListItemIcon>{<DeveloperModeIcon />}</ListItemIcon>
             <ListItemText primary={"Data"} />
+          </ListItem> */}
+          <ListItem
+            button
+            key={"Data Aleatoria"}
+            selected={selectedIndex === "Data Aleatoria"}
+            onClick={(event) => handleListItemClick(event, 5)}
+          >
+            <ListItemIcon>{<DeveloperModeIcon />}</ListItemIcon>
+            <ListItemText primary={"Data Aleatoria"} />
           </ListItem>
         </List>
       </Drawer>
@@ -188,7 +202,8 @@ export default function PersistentDrawerLeft() {
         {selectedIndex === "Algoritmo FCFS" && <Fcfs/>}
         {selectedIndex === "Algoritmo SJF" && <Sjf/>}
         {selectedIndex === "Algoritmo RR" && <Rr/>}
-        {selectedIndex === "Data" && <Data/>}
+        {/* {selectedIndex === "Data" && <Data/>} */}
+        {selectedIndex === "Data Aleatoria" && <DataAleatoria/>}
         {/* <Home /> */}
       </main>
   
