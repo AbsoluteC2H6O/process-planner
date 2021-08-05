@@ -1,4 +1,4 @@
-//import "./App.css";
+
 import React, { useState, useEffect, useRef } from "react";
 import { Button, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -6,10 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import DataAleatoria from "../Components/DataAleatoria";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-// import Modal from "@material-ui/core/Modal";
-// import Backdrop from "@material-ui/core/Backdrop";
-// import Fade from "@material-ui/core/Fade";
-// import TextField from "@material-ui/core/TextField";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -25,8 +21,6 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import AdjustIcon from "@material-ui/icons/Adjust";
 import Timer from "../Components/Timer";
 import OfflinePinSharpIcon from "@material-ui/icons/OfflinePinSharp";
-//import CircularProgress from '@material-ui/core/CircularProgress';
-//import DeleteIcon from "@material-ui/icons/Delete";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -56,13 +50,7 @@ let queueL = [];
 let queueC = [];
 let queueT = [];
 
-// let selectedProcessE = {
-//   processName: "",
-//   comingTime: 0,
-//   ejecutionTime: 0,
-//   bloquedTime: 0,
-//   waitTime: 0,
-// };
+
 let selectedProcessE = null;
 let positionP = 0;
 let count1 = 0;
@@ -87,10 +75,7 @@ export default function Fcfs() {
   const [list, setList] = useState([]);
   const [selectedProcess, setSelectedProcess] = React.useState(12);
   const [ejec, setEjec] = useState(false);
-  // console.log("dataselected", dataselected);
-  // dataselected.map((item,index)=>{
-  //   console.log("item",item);
-  // })
+
 
   const handleButton1 = () => {
     queueC = dataselected;
@@ -106,25 +91,7 @@ export default function Fcfs() {
 
   const handleButton4 = () => {
     setStart(true);
-    // setStartOp(false);
-    // setTimeout(() => {
-    //   //setTime(time+1);
-    //   setStartOp(true);
-    // }, 500);
-    // setTime(time + 1);
-    // setProgress((prevProgress) =>
-    //   prevProgress >= selectedProcess ? 0 : prevProgress + 1
-    // );
-    //setProgress2((prevProgress2) => (prevProgress2 >= selectedProcess ? 0 : prevProgress2 + selectedProcess*0.1));
-    // if (setProgress === 0) {
-    //   setSelectedProcess(null);
-    // }
 
-    // const timer = setInterval(() => {
-    //   setTime(time+1);
-    // }, 1000);
-
-    // clearInterval(timer);
   };
   const handleButton5 = () => {
     setStart(false);
@@ -253,21 +220,9 @@ export default function Fcfs() {
     };
   }
   React.useEffect(() => {
-    // queueC = dataselected;
     if (start === true) {
       const timer = setInterval(() => {
-        // setTime(time + 1);
-        //setStartOp(true);
-        // let prob = Math.floor(Math.random() * (max2 - min2)) + min2;
-        // if (prob > 80) {
 
-        //     let con1 = Math.floor(Math.random() * (max - min)) + min;
-        //     let con2 = Math.floor(Math.random() * (max - min)) + min;
-        //     let con3 = Math.floor(Math.random() * (max - min)) + min;
-        //     let con4 = Math.floor(Math.random() * (max - min)) + min;
-        //     queueC.push([`P${i + 1}`, con1, con2, con3, con4]);
-
-        // }
         let prob = uno_a_tres();
         if (prob === 1) {
           let con2 = Math.floor(Math.random() * (max - min)) + min;
@@ -284,50 +239,24 @@ export default function Fcfs() {
         if (queueC.length > 0) {
           let queueAux = [];
           let queueAux2 = [];
-          //  setData(noverades?.data.filter((item) => item.id != deleteId));
-          //   setList(queueC?.filter((item) => item.waitTime === count1));
-          ///  console.log(" antes de asignar queueC", queueC.length,"queueuAux", queueAux.length,"queue L", queueL.length,"queueuAux 2", queueAux2.length,);
-
+ 
           queueAux = queueC.filter((queuec) => queuec.waitTime !== count1);
           queueAux2 = queueC.filter((queuec) => queuec.waitTime === count1);
           queueC = queueAux;
 
-          //  queueL+=queueAux;
+         
           queueAux2.map((item, index) => {
             // console.log("entre a map");
             queueL.push(item);
           });
 
-          //  console.log("queueC", queueC.length,"queueuAux", queueAux.length,"queue L", queueL.length,"queueuAux 2", queueAux2.length,);
-        }
+     }
         if(selectedProcessE ===undefined){
           selectedProcessE=null;
         }
         if (queueL.length > 0) {
-          // console.log("entre a guardar sele",ejec,selectedProcessE);
           if (selectedProcessE === null) {
-            ////
-            // let menor = queueL[0].ejecutionTime;
-            // let position = 0;
-
-            // queueL.map((item, index) => {
-            //   console.log("mapitem",item,queueL.length);
-            //   if (index + 1 < queueL.length) {
-            //     if (menor > queueL[index + 1].ejecutionTime) {
-            //       menor = queueL[index + 1].ejecutionTime;
-            //       position = queueL[index + 1].id;
-            //     }
-            //   }
-            // });
-            // console.log("min", menor, "position", position);
-            // let aux3 = [];
-            // let aux2 = [];
-            // aux3 = queueL.filter((queuel) => queuel.id !== position);
-            // aux2 = queueL.filter((queuel) => queuel.id === position);
-            // console.log("aux2", aux2);
-            // console.log("aux3", aux3);
-            // console.log("queuel", queueL);
-            ////
+            
             setEjec(true);
             count2 = 0;
             setProgress(0);
@@ -377,23 +306,13 @@ export default function Fcfs() {
               // console.log("saque de cola")
               selectedProcessE = queueL.shift();
               setProgress(0);
-              //  console.log("entre 2", queueL, selectedProcessE);
-              // setTimeout(() => {
-              //   //setTime(time+1);
-              //   setOption2(0);
-              // }, 800);
+         
               }else{
                 let aux3 = [];
                 let aux2 = [];
                 aux3 = queueL.filter((queuel) => queuel.id !== position);
                 aux2 = queueL.filter((queuel) => queuel.id === position);
       
-                // let result = aux2.filter((item,index)=>{
-                //   return aux2.indexOf(item) === index;
-                // });
-                // let result2 = aux3.filter((item,index)=>{
-                //   return aux3.indexOf(item) === index;
-                // });
                 queueT.push(selectedProcessE);
                 selectedProcessE = aux2[0];
                 queueL = aux3;
@@ -418,33 +337,16 @@ export default function Fcfs() {
             }
           }
         }
-        //   setProgress2((prevProgress2) => (prevProgress2 >= selectedProcess ? 0 : prevProgress2 + selectedProcess*0.1));
-        // if (progress === 0) {
-        //   setSelectedProcess(null);
-        // }
+  
 
         setTime((prevTime) => prevTime + 1);
-        // console.log("count1", count1);
-        // console.log(selectedProcessE.processName,"times ejecution",selectedProcessE.ejecutionTime,"progress",progress,"time",time);
-        // if (selectedProcessE !== null) {
-        //   // console.log("selectedejection/count2",selectedProcessE.ejecutionTime,count2);
 
-        // }
       }, 1000);
       return () => {
         clearInterval(timer);
       };
     }
-    //  console.log("Dataselected", dataselected, "cola", queueC);
-    // if (start === true) {
-    // setProgress(selectedProcess)
 
-    //setProgress((prevProgress) => (prevProgress >= 10 ? 0 : prevProgress + 10));
-
-    // }
-    // const timer = setInterval(() => {
-    //   setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-    // }, 800);
   }, [start]);
   console.log("selectProces",selectedProcessE);
   return (
@@ -660,10 +562,7 @@ export default function Fcfs() {
                     </CardContent>
                   </CardActionArea>{" "}
                   <CardActions>
-                    {/* <Button size="small" color="primary">
-                      <BlockIcon />
-                      Bloquear
-                    </Button> */}
+             
                     <Paper className={classes.paper3}>
                       {" "}
                       {progress}/{selectedProcessE?.ejecutionTime}

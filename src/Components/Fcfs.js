@@ -255,18 +255,7 @@ export default function Fcfs() {
     // queueC = dataselected;
     if (start === true) {
       const timer = setInterval(() => {
-        // setTime(time + 1);
-        //setStartOp(true);
-        // let prob = Math.floor(Math.random() * (max2 - min2)) + min2;
-        // if (prob > 80) {
-
-        //     let con1 = Math.floor(Math.random() * (max - min)) + min;
-        //     let con2 = Math.floor(Math.random() * (max - min)) + min;
-        //     let con3 = Math.floor(Math.random() * (max - min)) + min;
-        //     let con4 = Math.floor(Math.random() * (max - min)) + min;
-        //     queueC.push([`P${i + 1}`, con1, con2, con3, con4]);
-
-        // }
+ 
         let prob = uno_a_tres();
         if (prob ===1) {
           let con2 = Math.floor(Math.random() * (max - min)) + min;
@@ -341,11 +330,7 @@ export default function Fcfs() {
               // console.log("saque de cola")
               selectedProcessE = queueL.shift();
               setProgress(0);
-              //  console.log("entre 2", queueL, selectedProcessE);
-              // setTimeout(() => {
-              //   //setTime(time+1);
-              //   setOption2(0);
-              // }, 800);
+          
             } else {
               setProgress(0);
               queueT.push(selectedProcessE);
@@ -361,16 +346,7 @@ export default function Fcfs() {
         clearInterval(timer);
       };
     }
-    //  console.log("Dataselected", dataselected, "cola", queueC);
-    // if (start === true) {
-    // setProgress(selectedProcess)
 
-    //setProgress((prevProgress) => (prevProgress >= 10 ? 0 : prevProgress + 10));
-
-    // }
-    // const timer = setInterval(() => {
-    //   setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-    // }, 800);
   }, [start]);
 
   return (
@@ -434,25 +410,11 @@ export default function Fcfs() {
           >
             Cargar data aleatoria
           </Button>
-          {/* <Button
-            variant="contained"
-            color="primary"
-            onClick={handleButton2}
-            style={{
-              width: 170,
-              marginTop: 30,
-              marginLeft: 100,
-              marginBottom: 10,
-            }}
-          >
-            Cargar data elegida
-          </Button> */}
+
         </>
       )}
       {option === 0 && <DataAleatoria />}
-      {/* {dataselected.map((item, index) => {
-        <Paper className={classes.paper}>ss</Paper>;
-      })} */}
+
 
       {option === 1 && (
         <Grid container spacing={2}>
@@ -498,10 +460,7 @@ export default function Fcfs() {
                               </CardContent>
                             </CardActionArea>
                             <CardActions>
-                              {/* <Button size="small" color="primary">
-                                <BlockIcon />
-                                Bloquear
-                              </Button> */}
+                         
                               <Paper className={classes.paper}>
                                 {" "}
                                 Tw: {item.waitTime}  
@@ -543,21 +502,7 @@ export default function Fcfs() {
               </>
             )}
 
-            {/* <Clock progress={progress} setProgress={setProgress}
-              time={time} setTime={setTime}
-            /> */}
-            {/* {startOp ? (
-              <Timer
-                time={time}
-                setTime={setTime}
-                start={start}
-                queueC={queueC}
-                queueL={queueL}
-                queueB={queueB}
-              />
-            ) : (
-              <CircularProgress />
-            )} */}
+    
             <Card className={classes.root}>
               {startOp && selectedProcessE !== null ? (
                 <>
@@ -646,57 +591,7 @@ export default function Fcfs() {
               )}
             </Paper>
           </Grid>
-          {/* <Grid item sm={3} xs={3} md={3}>
-            <Paper className={classes.paper}>Cola bloqueados</Paper>
-            <Paper className={classes.paper3}>
-              <Typography variant="h6" component="h2">
-               Total {queueB.length}{"      "}
-                Promedio: {bloqueo()}
-              </Typography>
-            </Paper>
-            <Paper className={classes.paper}>
-              <div>
-                {queueB.length > 0 &&
-                  queueB.map((item, index) => (
-                    <>
-                      <Card key={item.id} className={classes.root}>
-                        <CardActionArea>
-                          <CardContent>
-                            <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="h2"
-                            >
-                              {item.processName}
-                            </Typography>
-                            <Typography
-                              variant="subtitle1"
-                              color="textSecondary"
-                              component="p"
-                            >
-                              Tb: {item.bloquedTime}
-                              {"     "}
-                              Tw: {item.waitTime}
-                              {"      "}
-                              Te: {item.ejecutionTime}
-                              {"     "}
-                              Tc: {item.comingTime}
-                            </Typography>
-                          </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                          <Button size="small" color="primary">
-                            <BlockIcon />
-                            Desbloquear
-                          </Button>
-                        </CardActions>
-                      </Card>
-                      <Divider />
-                    </>
-                  ))}
-              </div>
-            </Paper>
-          </Grid> */}
+
           <Grid item sm={3} xs={3} md={3}>
             <Paper className={classes.paper}>Cola listos</Paper>
             <Paper className={classes.paper3}>
@@ -738,10 +633,7 @@ export default function Fcfs() {
                             </CardContent>
                           </CardActionArea>
                           <CardActions>
-                            {/* <Button size="small" color="primary">
-                            <BlockIcon />
-                            Bloquear
-                          </Button> */}
+                        
                           </CardActions>
                         </Card>
                         <Divider />
