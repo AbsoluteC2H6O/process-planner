@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/process-planner/static/css/main.a617e044.chunk.css",
+    "main.js": "/process-planner/static/js/main.1638e916.chunk.js",
+    "main.js.map": "/process-planner/static/js/main.1638e916.chunk.js.map",
+    "runtime-main.js": "/process-planner/static/js/runtime-main.76090d91.js",
+    "runtime-main.js.map": "/process-planner/static/js/runtime-main.76090d91.js.map",
+    "static/js/2.8089cc40.chunk.js": "/process-planner/static/js/2.8089cc40.chunk.js",
+    "static/js/2.8089cc40.chunk.js.map": "/process-planner/static/js/2.8089cc40.chunk.js.map",
+    "static/js/3.e520cbf0.chunk.js": "/process-planner/static/js/3.e520cbf0.chunk.js",
+    "static/js/3.e520cbf0.chunk.js.map": "/process-planner/static/js/3.e520cbf0.chunk.js.map",
+    "index.html": "/process-planner/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/process-planner/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.8089cc40.chunk.js.LICENSE.txt": "/process-planner/static/js/2.8089cc40.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76090d91.js",
+    "static/js/2.8089cc40.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.1638e916.chunk.js"
+  ]
+}
